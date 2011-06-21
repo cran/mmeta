@@ -1,0 +1,16 @@
+# Exported functions
+export(singletable,multipletables,
+       xtable.multipletables,  plot.multipletables,  summary.multipletables, 
+       plot.singletable, summary.singletable
+       )
+       
+       
+#S3 methods
+S3method(plot,multipletables)
+S3method(summary,multipletables)
+S3method(xtable,multipletables)
+S3method(summary, singletable)
+S3method(plot, singletable)
+
+import(xtable)  
+
