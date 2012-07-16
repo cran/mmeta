@@ -123,7 +123,7 @@ clinical trials. in press at Communication in Statistics:
 Theory and Methods.
 }
 
-\author{Xiao Su <Xiao.Su@uth.tmc.edu>}
+
 
 \seealso{\code{\link{plot.multipletables}}
          \code{\link{summary.multipletables}}

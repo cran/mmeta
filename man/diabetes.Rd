@@ -41,7 +41,7 @@ The dataset \code{diabetes} is used to conduct exact posterior inference
 of relative risk and risk difference for multiple 2X2 tables.
 }
 
-\author{Xiao Su<Xiao.Su@uth.tmc.edu>}
+
 
 \seealso{
   \code{\link{multipletables}},

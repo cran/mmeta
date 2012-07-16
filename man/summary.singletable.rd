@@ -33,8 +33,6 @@ clinical trials. in press at Communication in Statistics:
 Theory and Methods.
 }
 
-\author{Xiao Su<Xiao.Su@uth.tmc.edu>}
-
 \seealso{\code{\link{multipletables}}}
 \examples{
 # Inference under Jeffreys prior distribution
