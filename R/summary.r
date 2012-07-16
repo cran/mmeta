@@ -5,7 +5,7 @@
 ### Input:   S3 object "singletable" 
 ### Output:  return value of summary.single (refer to help file)
 ### Note:    the implement is function "summary_single_sampling"
-### Author:  Sheng Luo and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ######################################################################################
 summary.singletable <- function(object,...) {
@@ -20,7 +20,7 @@ summary.singletable <- function(object,...) {
 ### Purpose: the implement of S3 method "summary" for object "multipletables"
 ### Input:   S3 object "multipletable" 
 ### Output:  return value of summary.multiple (refer to help file)
-### Author:  Sheng Luo and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ######################################################################################
 summary.multipletables <- function(object,...) {
@@ -76,7 +76,7 @@ summary.multipletables <- function(object,...) {
 ### Input:   S3 object "singletable" 
 ### Output:  return value of summary.single (refer to help file)
 ### Note:    the wrapper is function "summary.single"
-### Author:  Sheng Luo and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ######################################################################################
 summary_single_sampling <- function(object) {
@@ -121,7 +121,7 @@ summary_single_sampling <- function(object) {
 ### Purpose: compute the study specific measure
 ### Input:   S3 object "multipletables" 
 ### Output:  study-specific measure(mean, lower bound, upper bound)
-### Author:  Sheng Luo and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ######################################################################################
 study_specifc <- function(object) {

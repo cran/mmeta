@@ -3,7 +3,7 @@
 ###          Sarmanov beta distribution or independent beta distribution
 ### Input:   data(y1,n1,y2,n2), model
 ### Output:  a list, containning pvalue,chi2,MLE and 
-### Author:  Sheng Luo and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ###################################################################################
 MLE.function <- function(y1=y1,n1=n1,y2=y2,n2=n2,model=model) {
@@ -55,7 +55,7 @@ expit <- function(x) exp(x)/(1+exp(x))
 ### Input: 1)mypar: log(a1,b1,a2,b2), eta
 ###        2)mydata: n1,y1,y2,n2
 ### Output:  loglikilhood
-### Author:  Sheng Luo and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ###################################################################################################
 myLik.sar.log <- function(mypar, mydat) { 
@@ -97,7 +97,7 @@ myLik.sar.log <- function(mypar, mydat) {
 ### Input: 1)mypar: log(a1,b1,a2,b2), eta
 ###        2)mydata: n1,y1,y2,n2
 ### Output:  loglikilhood
-### Author:  Sheng Luo and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ##################################################################################################
 myLik.indep.log <- function(mypar, mydat) {

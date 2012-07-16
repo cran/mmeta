@@ -3,7 +3,7 @@
 ### Input:   the object "singletable"
 ### Output:  no return value.The plot may be saved as a eps file or be printed in x11 windows
 ### Note:    This function calls functions "sideplot_single", "overlapplot_single"
-### Author:  Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ##############################################################################################
 plot.singletable <- function(x,type=type,file=NULL,select=c(1,2),
@@ -33,7 +33,7 @@ plot.singletable <- function(x,type=type,file=NULL,select=c(1,2),
 ### Input:   S3 object "singletable" ,other input refers to the help file "plot.single"
 ### Output:  no return value. The plot may be saved as a eps file or be printed in x11 windows
 ### Note:    This function is called by wrapper function "plot.singletable"
-### Author:  Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ################################################################################################
 sideplot_single <- function(object,file=NULL,
@@ -98,7 +98,7 @@ sideplot_single <- function(object,file=NULL,
 ### Input:   S3 object "singletable" ,other input refers to the help file "plot.single"
 ### Output:  no return value. The plot may be saved as a eps file or be printed in x11 windows
 ### Note:    This function is called by function "plot.singletable"
-### Author:  Xiao Su
+### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
 ### Data:    7/13/2012
 ################################################################################################
 overlapplot_single <- function(object,select=c(1,2),

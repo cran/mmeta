@@ -2,7 +2,7 @@
 ### Purpose: Transform parameter from original scale to logit scale
 ### Input:   original scale
 ### Output:  logit scale
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Haitao Chu, Xiao Su
 ### Data:    7/13/2012
 ###################################################################################
 logit <- function(p) log(p/(1-p))
@@ -11,7 +11,7 @@ logit <- function(p) log(p/(1-p))
 ### Purpose: Transform parameter from logit scale to original scale
 ### Input:   logit scale
 ### Output:  original scale
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Haitao Chu, Xiao Su
 ### Data:    7/13/2012
 ###################################################################################
 expit <- function(x) exp(x)/(1+exp(x))
@@ -23,7 +23,7 @@ expit <- function(x) exp(x)/(1+exp(x))
 ### Purpose: Compute confidence interval from samples
 ### Input:   a vector contains samples, significance level
 ### Output:  list, contraining confidence interval
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Haitao Chu, Xiao Su
 ### Data:    7/13/2012
 ###################################################################################
 minlength.CI <- function(x, alpha, left=-1E10, right=1E10){                     
@@ -41,7 +41,7 @@ minlength.CI <- function(x, alpha, left=-1E10, right=1E10){
 ### Purpose: compute kth moment of OR for independent model
 ### Input:   k, hyperparemeters(a1, b1, a2, b2)
 ### Output:  the kth moment
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Haitao Chu, Xiao Su
 ### Data:    7/13/2012
 ################################################################################### 
 moment.OR.inde <- function(k, alpha1, beta1, alpha2, beta2) {
@@ -54,7 +54,7 @@ moment.OR.inde <- function(k, alpha1, beta1, alpha2, beta2) {
 ### Purpose: compute kth moment of OR for Sarmanov model
 ### Input:   k, hyperparemeters(a1,b1,a2,b2)
 ### Output:  the kth moment
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Haitao Chu, Xiao Su
 ### Data:    7/13/2012
 ################################################################################### 
 moment.OR.sar <- function(k, y1, n1, y2, n2, a1, b1, a2, b2, rho) {
@@ -71,7 +71,7 @@ moment.OR.sar <- function(k, y1, n1, y2, n2, a1, b1, a2, b2, rho) {
 ### Purpose: compute kth moment of RR for independent model
 ### Input:   k, hyperparemeters(a1,b1,a2,b2)
 ### Output:  the kth moment
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Haitao Chu, Xiao Su
 ### Data:    7/13/2012
 ################################################################################### 
 moment.RR.inde <- function(k, alpha1, beta1, alpha2, beta2) {
@@ -83,7 +83,7 @@ moment.RR.inde <- function(k, alpha1, beta1, alpha2, beta2) {
 ### Purpose: compute kth moment of RR for Sarmanov model
 ### Input:   k, hyperparemeters(a1,b1,a2,b2)
 ### Output:  the kth moment
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Haitao Chu, Xiao Su
 ### Data:    7/13/2012
 ###################################################################################                                                             
 moment.RR.sar <- function(k, y1, n1, y2, n2, a1, b1, a2, b2, rho) {
@@ -101,7 +101,7 @@ moment.RR.sar <- function(k, y1, n1, y2, n2, a1, b1, a2, b2, rho) {
 ### Input:   k, hyperparemeters(a1,b1,a2,b2,rho),measure,model
 ### Output:  the kth moment
 ### Note:    Implemented by "moment.OR.inde","moment.OR.sar","moment.RR.inde","moment.RR.sar "
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Haitao Chu, Xiao Su
 ### Data:    7/13/2012
 ################################################################################################ 
 moment.function <- function(measure=measure, model=model, k=k, y1=y1, n1=n2, y2=y2,
