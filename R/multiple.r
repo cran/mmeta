@@ -3,7 +3,7 @@
 ### Input:   data.frame(y1,n1,y2,n2),other(measure, model, method,alpha, nsam)
 ### Output:  S3 object "multipletables", refer to the help file of multipletables
 ### Note:    Implement is function "multipletables_sar"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ######################################################################################
 multipletables <- function(data=NULL, measure=NULL, model="Sarmanov",
@@ -66,7 +66,7 @@ multipletables <- function(data=NULL, measure=NULL, model="Sarmanov",
 ### Input:   data(y1,n1,y2,n2),other(measure, model, method,alpha, nsam)
 ### Output:  S3 object "multipletables", refer to the help file of multipletables
 ### Note:    Wrapper is function "multipletables"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu 
 ### Data:    7/13/2012
 ######################################################################################
 multipletables_sar <- function(y1=y1,n1=n1,y2=y2,n2=n2,studynames=studynames,measure=measure,

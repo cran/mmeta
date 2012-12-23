@@ -4,7 +4,7 @@
 ###          comaparative measure, model, method, significance level (alpha),
 ###          number of samples (nsam)
 ### Output:  S3 object "singletable", refer to the help file of singletable
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ######################################################################################
 singletable <- function(y1=y1,n1=n1,y2=y2,n2=n2,measure=measure,model="Sarmanov",

@@ -3,7 +3,7 @@
 ###          Sarmanov beta distribution or independent beta distribution
 ### Input:   data(y1,n1,y2,n2), model
 ### Output:  a list, containning pvalue,chi2,MLE and 
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 MLE.function <- function(y1=y1,n1=n1,y2=y2,n2=n2,model=model) {
@@ -55,7 +55,7 @@ expit <- function(x) exp(x)/(1+exp(x))
 ### Input: 1)mypar: log(a1,b1,a2,b2), eta
 ###        2)mydata: n1,y1,y2,n2
 ### Output:  loglikilhood
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################################
 myLik.sar.log <- function(mypar, mydat) { 
@@ -97,7 +97,7 @@ myLik.sar.log <- function(mypar, mydat) {
 ### Input: 1)mypar: log(a1,b1,a2,b2), eta
 ###        2)mydata: n1,y1,y2,n2
 ### Output:  loglikilhood
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ##################################################################################################
 myLik.indep.log <- function(mypar, mydat) {
@@ -122,7 +122,7 @@ myLik.indep.log <- function(mypar, mydat) {
 ### Purpose: This function fit beta-binomial model to generate initial values for hyperparameters a & b
 ### Input: y and n. Both are data vector. y is the number of events. n is the number of experiments
 ### Output: initial value of hyperparemeters a1,b1,a2,b2 for opzimazation
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ########################################################################################################
 initial.val.gen <- function(y, n) {
@@ -137,7 +137,7 @@ initial.val.gen <- function(y, n) {
 ###           It is standardized first to avoid computational problem
 ### Input: symmetric matrix: Hessian/Information : parts of the results of optim
 ### Output: inverse matrix or warming
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 inverse.matrix.func <- function(Mat){
@@ -164,7 +164,7 @@ inverse.matrix.func <- function(Mat){
 ### Purpose:  Transfer the paremeter estimates in the transformed scales into the original scale
 ### input: parameters in the transformed scales: log(a1,b1,a2,b2), eta
 ### Output: parameters in the original scale
-### Author:  Sheng Luo
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################################
 par.cal <- function(mypar) {

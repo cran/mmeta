@@ -4,7 +4,7 @@
 ###        theta (comparative measure)
 ### Output: density(at theta)
 ### Note: the function uses functions  "dens.sar" and "dens.inde"
-### Author:  Sheng Luo and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 densityfunction <- function(theta=theta,a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,y1=0,y2=0,n1=0,
@@ -31,7 +31,7 @@ densityfunction <- function(theta=theta,a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,y1=0,y2=
 ###        interval(begin,end,length)
 ### Output: list, containning x and correspondent density y
 ### Note: the function uses functions "dens.sar" and "dens.inde"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu, Yong Chen, Haitao Chu, Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 dens.post <- function(y1=y1, n1=n2, y2=y2, n2=n2, a1=a1, b1=b1, a2=a2, b2=b2, rho=rho,
@@ -52,7 +52,7 @@ dens.post <- function(y1=y1, n1=n2, y2=y2, n2=n2, a1=a1, b1=b1, a2=a2, b2=b2, rh
 ### Purpose: Calulate the hypergeometric function 2f1 using Fortran library
 ### input: the parameters required by hypergeometric function 2f1
 ### Output: the value of hypergeoFun at X=x
-### Author:  Sheng Luo, Yong Chen, Haitao Chu
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 hypergeoFun <- function(aa, bb, cc, xx, YY=0) {
@@ -76,7 +76,7 @@ if(.Platform$OS.type=="unix")
 ###          it is identical for OR/RR/RD.
 ### input: data (y1, n1, y2, n2), hyperparameters(a1,b1,a2,b2,rho)
 ### Output: the value of hypergeoFun at X=x
-### Author:  Sheng Luo, Yong Chen, Haitao Chu
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 omega.computation <- function(y1, n1, y2, n2, a1, b1, a2, b2, rho) {
@@ -145,7 +145,7 @@ omega.computation <- function(y1, n1, y2, n2, a1, b1, a2, b2, rho) {
 ### Purpose: compute the densty of OR for independent model
 ### input: alpha1, beta1, alpha2, beta2, theta
 ### Output: the density at theta
-### Author:  Sheng Luo, Yong Chen, Haitao Chu
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 OR.dens.inde <- function(alpha1, beta1, alpha2, beta2, theta) {
@@ -170,7 +170,7 @@ OR.dens.inde <- function(alpha1, beta1, alpha2, beta2, theta) {
 ### Purpose: compute the densty of RR for independent model
 ### input: alpha1, beta1, alpha2, beta2, theta
 ### Output: the density at theta
-### Author:  Sheng Luo, Yong Chen, Haitao Chu
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 RR.dens.inde <- function(alpha1, beta1, alpha2, beta2, theta){            
@@ -201,7 +201,7 @@ RR.dens.inde <- function(alpha1, beta1, alpha2, beta2, theta){
 ### input: alpha1, beta1, alpha2, beta2, theta, meansure
 ### Output: the density at theta
 ### Note: this function is used by "OR.dens.inde","RR.dens.inde"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 dens.inde <- function(alpha1,beta1,alpha2,beta2,theta,measure) {
@@ -215,7 +215,7 @@ dens.inde <- function(alpha1,beta1,alpha2,beta2,theta,measure) {
 ### Purpose: compute the densty of OR under Sarmanov beta distribution
 ### input: alpha1, beta1, alpha2, beta2, theta, omega1, omega2, omega3, omega4
 ### Output: the density at theta
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 OR.dens.sar <- function(alpha1,beta1,alpha2,beta2,theta,
@@ -230,7 +230,7 @@ OR.dens.sar <- function(alpha1,beta1,alpha2,beta2,theta,
 ### Purpose: compute the densty of RR under Sarmanov beta distribution
 ### input: alpha1, beta1, alpha2, beta2, theta, omega1, omega2, omega3, omega4
 ### Output: the density at theta
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ###################################################################################
 RR.dens.sar <- function(alpha1,beta1,alpha2,beta2,theta,
@@ -248,7 +248,7 @@ RR.dens.sar <- function(alpha1,beta1,alpha2,beta2,theta,
 ###        theta
 ### Output: the density at theta
 ### Note: The function uses functions "OR.dens.sar","RR.dens.sar"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 #########################################################################################
 dens.sar <- function(theta=theta,a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,y1=y1,y2=y2,n1=n1,n2=n2,

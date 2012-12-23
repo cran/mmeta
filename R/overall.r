@@ -4,7 +4,7 @@
 ###          model, alpha
 ### Output:  list, containning point estimate and CI, in original scale
 ### Note:    This function uses functions "OR.sar.log", "RR.sar.log", "RD.sar"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ##############################################################################################
 overall <- function(MLE, hessian.log, measure, model, alpha=alpha) {
@@ -26,7 +26,7 @@ overall <- function(MLE, hessian.log, measure, model, alpha=alpha) {
 ### Output:  list contains point estimate and wald CI in original scale
 ### Note:    This function is used in wrapper function "overall". Variance is computated
 ###          via Delta method.
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ############################################################################################# 
 OR.sar.log <- function(a1, b1, a2, b2, hessian.log, alpha=alpha) {
@@ -49,7 +49,7 @@ OR.sar.log <- function(a1, b1, a2, b2, hessian.log, alpha=alpha) {
 ### Output:  list contains point estimate and wald CI in original scale
 ### Note:    This function is used in wrapper function "overall". Variance is computated
 ###          via Delta method.
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 #############################################################################################
 RR.sar.log <- function(a1, b1, a2, b2, hessian.log,alpha=alpha) {
@@ -72,7 +72,7 @@ RR.sar.log <- function(a1, b1, a2, b2, hessian.log,alpha=alpha) {
 ### Output:  list contains point estimate and wald CI in original scale
 ### Note:    This function is used in wrapper function "overall". Variance is computated
 ###          via Delta method.
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 #############################################################################################
 RD.sar <- function(a1, b1, a2, b2, hessian.log,alpha=alpha) {

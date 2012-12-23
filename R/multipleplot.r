@@ -3,7 +3,7 @@
 ### Input:   the object "multipletables"
 ### Output:  no return value.The plot may be saved as a eps file or print in x11 windows
 ### Note:    the implement are functions "sideplot_multiple","overlapplot_multiple","forestplot"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ######################################################################################
 plot.multipletables <- function(x,type=NULL,select=NULL,file=NULL, xlim=NULL,ylim=NULL,
@@ -48,7 +48,7 @@ plot.multipletables <- function(x,type=NULL,select=NULL,file=NULL, xlim=NULL,yli
 ### Input:   S3 object "multipletables" 
 ### Output:  no return value.The plot may be saved as a eps file or print in x11 windows
 ### Note:    the wrapper is function "plot.multipletables"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 #########################################################################################
 forestplot <- function(object,select=NULL,xlab=NULL,ylab=NULL,
@@ -151,7 +151,7 @@ forestplot <- function(object,select=NULL,xlab=NULL,ylab=NULL,
 ### Input:   S3 object "multipletables" ,other input refers to the help file "plot.multiple"
 ### Output:  no return value.The plot may be saved as a eps file or print in x11 windows
 ### Note:    the wrapper is function "plot.multipletables"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 #############################################################################################  
 sideplot_multiple <- function(object,select=NULL,
@@ -230,7 +230,7 @@ sideplot_multiple <- function(object,select=NULL,
 ### Input:   S3 object "multipletables" ,other input refers to the help file "plot.multiple"
 ### Output:  no return value.The plot may be saved as a eps file or print in x11 windows
 ### Note:    the wrapper is function "plot.multipletables"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ############################################################################################## 
 overlapplot_multiple <- function(object,file=NULL,

@@ -5,7 +5,7 @@
 ###          model, number of smaples (nsam)
 ### Output:  samples
 ### Note:    the implement function: "inde.sampling.posterior" and "sar.sampling.posterior"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ######################################################################################
 sampling <- function(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,y1=0,n1=0,y2=0,n2=0,
@@ -34,7 +34,7 @@ sampling <- function(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,y1=0,n1=0,y2=0,n2=0,
 ###          model, number of smaples (nsam)
 ### Output:  samples
 ### Note:    This function is called by the wrapper function "sampling"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ##########################################################################################
 inde.sampling.posterior <- function(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam) {
@@ -56,7 +56,7 @@ inde.sampling.posterior <- function(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam) {
 ###          model, number of smaples (nsam)
 ### Output:  samples
 ### Note:    This function is called by the wrapper function "sampling"
-### Author:  Sheng Luo, Yong Chen, Haitao Chu and Xiao Su
+### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ######################################################################################
 sar.sampling.posterior<-function(a1,a2,b1,b2,n1,y1,n2,y2,rho,measure,nsam) {
