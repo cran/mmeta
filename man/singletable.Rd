@@ -9,7 +9,7 @@
 \usage{
    singletable(y1=y1,n1=n1,y2=y2,n2=n2,measure=measure,model="Sarmanov",
                         method="exact",a1=0.5,b1=0.5,a2=0.5,b2=0.5,rho=0,alpha=0.05,
-                        nsam=100000)
+                        nsam=100000,seed=NULL)
 }
 
 \arguments{
@@ -41,6 +41,7 @@
    is subject to constraints. See Details.}
    \item{alpha}{a numeric value specifying the significant level. Default value sets to 0.05.}
    \item{nsam}{a numeric value specifying the number of samples if method is "sampling". Default value sets to \code{100000}} 
+   \item{seed}{An integer from 1 to 14. The internal state of the OpenBUGS random number generator can be set to one of 14 predefined states. Each predefined state is 1012 draws apart to avoid overlap in random number sequences.Default value set to NULL.}
   
  }
 
@@ -99,8 +100,12 @@ Published online on Dec 4, 2011, PMID: 22143403. doi: 10.1177/0962280211430889
 
 Chen, Y., Luo, S., Chu, H., Su, X., and Nie, L. (2012a). An empirical
 Bayes method for multivariate meta-analysis with an application in
-clinical trials. in press at Communication in Statistics:
+clinical trials. in press, Communication in Statistics:
 Theory and Methods.
+
+Chen, Y., Luo, S., Chu, H., Wei, P. (2013). Bayesian inference on risk
+differences: an application to multivariate meta-analysis of adverse
+events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 }
 
 

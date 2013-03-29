@@ -7,7 +7,7 @@
 ### Data:    7/13/2012
 ######################################################################################
 multipletables <- function(data=NULL, measure=NULL, model="Sarmanov",
-                           method="sampling", nsam=10000, alpha=0.05) {
+                           method="sampling", nsam=10000, alpha=0.05,seed=NULL) {
   if (is.null(measure)) stop("measure is missing")
   if (is.null(data)) stop("data is missing")
   y1 <- data$y1; y2 <- data$y2
@@ -57,7 +57,7 @@ multipletables <- function(data=NULL, measure=NULL, model="Sarmanov",
   }
 
   out <- multipletables_sar(y1=y1,n1=n1,y2=y2,n2=n2,studynames=studynames,measure=measure,
-                            model=model,method=method,nsam=nsam,alpha=alpha)
+                            model=model,method=method,nsam=nsam,alpha=alpha,seed=seed)
   invisible(out)
 }
 
@@ -70,7 +70,7 @@ multipletables <- function(data=NULL, measure=NULL, model="Sarmanov",
 ### Data:    7/13/2012
 ######################################################################################
 multipletables_sar <- function(y1=y1,n1=n1,y2=y2,n2=n2,studynames=studynames,measure=measure,
-                               model=model,method=model,nsam=nsam,alpha=alpha) {
+                               model=model,method=model,nsam=nsam,alpha=alpha,seed=seed) {
   nstudy <- length(y1)
   ##parameters estimates
   mypar <- MLE.function(y1=y1,n1=n1,y2=y2,n2=n2,model=model)
@@ -99,13 +99,13 @@ multipletables_sar <- function(y1=y1,n1=n1,y2=y2,n2=n2,studynames=studynames,mea
   for(i in 1:nstudy){
     temp <- sampling(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,n1=n1[i],
                               y1=y1[i],n2=n2[i],y2=y2[i], model=model,measure=measure,
-                              nsam=nsam)
+                              nsam=nsam,seed=seed)
 	upper=quantile(temp,prob=0.9995,na.rm=T)
     mysample[[i]] =temp[temp<=upper]  
 	}						  
    priordsample <- sampling(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,n1=0,
                            y1=0,n2=0,y2=0, model=model,measure=measure,
-                           nsam=nsam)
+                           nsam=nsam,seed=seed)
 	upper=quantile(temp,prob=0.9995,na.rm=T)
      priordsample=temp[temp<=upper]  
 				   

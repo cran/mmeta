@@ -44,8 +44,12 @@ Published online on Dec 4, 2011, PMID: 22143403. doi: 10.1177/0962280211430889
 
 Chen, Y., Luo, S., Chu, H., Su, X., and Nie, L. (2012a). An empirical
 Bayes method for multivariate meta-analysis with an application in
-clinical trials. in press at Communication in Statistics:
+clinical trials. in press, Communication in Statistics:
 Theory and Methods.
+
+Chen, Y., Luo, S., Chu, H., Wei, P. (2013). Bayesian inference on risk
+differences: an application to multivariate meta-analysis of adverse
+events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 }
 
 

@@ -7,7 +7,7 @@
 }
 \usage{
   multipletables(data=NULL, measure=NULL, model="Sarmanov",
-                           method="sampling", nsam=10000, alpha=0.05)    
+                           method="sampling", nsam=10000, alpha=0.05, seed=NULL)    
 }
 
 \arguments{
@@ -25,6 +25,10 @@
       Monte Carlo sampling. \code{exact} is exact method.}
    \item{alpha}{a numeric value specifying the significant level. Default value sets to 0.05.}
    \item{nsam}{a numeric value specifying the number of samples if method is \code{sampling}. Default value sets to \code{10000}}  
+   \item{seed}{An integer from 1 to 14. The internal state of the
+     OpenBUGS random number generator can be set to one of 14 predefined
+     states. Each predefined state is 1012 draws apart to avoid overlap
+     in random number sequences. Default value set to NULL.}
  }
 
 \details{There are two kinds of study design, i.e., prospective study or
@@ -117,10 +121,14 @@ analysis on meta-analysis of case-control studies accounting for
 within-study correlation. Statistical Methods in Medical Research,
 Published online on Dec 4, 2011, PMID: 22143403. doi: 10.1177/0962280211430889
 
-Chen, Y., Luo, S., Chu, H., Su, X., and Nie, L. (2012a). An empirical
+Chen, Y., Luo, S., Chu, H., Su, X., and Nie, L. (2012). An empirical
 Bayes method for multivariate meta-analysis with an application in
-clinical trials. in press at Communication in Statistics:
+clinical trials. in press, Communication in Statistics:
 Theory and Methods.
+
+Chen, Y., Luo, S., Chu, H., Wei, P. (2013). Bayesian inference on risk
+differences: an application to multivariate meta-analysis of adverse
+events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 }
 
 

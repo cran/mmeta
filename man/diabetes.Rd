@@ -28,7 +28,7 @@
 \references{
 Chen, Y., Luo, S., Chu, H., Su, X., and Nie, L. (2012a). An empirical
 Bayes method for multivariate meta-analysis with an application in
-clinical trials. in press at Communication in Statistics:
+clinical trials. in press, Communication in Statistics:
 Theory and Methods.
 
 Bellamy, L, Casas, J.P., Hingorani, A.D., Williams, D. (2009) Type 2 diabetes mellitus after gestational
