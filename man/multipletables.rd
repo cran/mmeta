@@ -142,7 +142,8 @@ events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 #library(mmeta)
 #Analyze the dataset colorectal to conduct exact inference of the odds ratios
 #data(colorectal)
-#multiple.OR <- multipletables(data=colorectal, measure="OR", model="Sarmanov", method="exact")
+#multiple.OR <- multipletables(data=colorectal, measure="OR",
+# model="Sarmanov", method="exact")
 #summary(multiple.OR)
 # Generate the forest plot with 95\% CIs of study-specific odds ratios
 #and 95\% CI of overall odds ratio
@@ -151,7 +152,8 @@ events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 #plot(multiple.OR, type="overlap", select=c(4,14,16,20),file="overlapOR")
 # Plot the posterior density functions of some target studies in a
 #side-by-side manner 
-#plot(multiple.OR, type="sidebyside", select=c(4,14,16,20), ylim=c(0,2.7), xlim=c(0.5,1.5),file="sidebysideOR")
+#plot(multiple.OR, type="sidebyside", select=c(4,14,16,20), ylim=c(0,2.7),
+# xlim=c(0.5,1.5),file="sidebysideOR")
 # Convert R object to an xtable object to be printed as a Latex or HTML table
 #multiple.OR.table <- xtable(multiple.OR)
 #print(multiple.OR.table)
@@ -164,7 +166,8 @@ events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 #summary(multiple.RR)
 #plot(multiple.RR, type="forest", addline=1)
 #plot(multiple.RR, type="overlap", select=c(3,8,14,16))
-#plot(multiple.RR, type="sidebyside", select=c(3,8,14,16), ylim=c(0,1.2), xlim=c(0.4,3))
+#plot(multiple.RR, type="sidebyside", select=c(3,8,14,16), 
+#ylim=c(0,1.2), xlim=c(0.4,3))
 #multiple.RR.table <- xtable(multiple.RR)
 #print(multiple.RR.table)
 #print(multiple.RR.table, type="html")

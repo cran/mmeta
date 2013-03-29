@@ -58,11 +58,11 @@ dens.post <- function(y1=y1, n1=n2, y2=y2, n2=n2, a1=a1, b1=b1, a2=a2, b2=b2, rh
 hypergeoFun <- function(aa, bb, cc, xx, YY=0) {
 
 if(.Platform$OS.type=="unix")
-	path<-file.path(.find.package("mmeta"),"libs","mmeta.so")
+	path<-file.path(find.package("mmeta"),"libs","mmeta.so")
 	
   if(.Platform$OS.type=="windows"){
-	if(.Platform$r_arch=="i386") path<-file.path(.find.package("mmeta"),"libs","i386","mmeta.dll")
-	if(.Platform$r_arch=="x64")  path<-file.path(.find.package("mmeta"),"libs","x64","mmeta.dll")
+	if(.Platform$r_arch=="i386") path<-file.path(find.package("mmeta"),"libs","i386","mmeta.dll")
+	if(.Platform$r_arch=="x64")  path<-file.path(find.package("mmeta"),"libs","x64","mmeta.dll")
   
   }
     dyn.load(path)

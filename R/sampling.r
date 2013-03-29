@@ -61,7 +61,7 @@ inde.sampling.posterior <- function(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam,seed) {
 ### Data:    7/13/2012
 ######################################################################################
 sar.sampling.posterior<-function(a1,a2,b1,b2,n1,y1,n2,y2,rho,measure,nsam,seed) {
-  code <- file.path(.find.package("mmeta"), "winbugcode", "SarmanovPosterior.txt")
+  code <- file.path(find.package("mmeta"), "winbugcode", "SarmanovPosterior.txt")
   mu1 <- a1/(a1+b1); mu1.1 <- 1-mu1
   mu2 <- a2/(a2+b2); mu2.1 <- 1-mu2
   omega <- rho/sqrt(mu1*mu1.1/(a1+b1+1))/sqrt(mu2*mu2.1/(a2+b2+1))

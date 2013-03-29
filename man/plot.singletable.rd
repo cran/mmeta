@@ -5,7 +5,8 @@
    Produces various plots for single table analysis.
 }
 \usage{
-    \method{plot}{singletable}(x,type=type,file=NULL,select=c(1,2),xlab=NULL,ylab=NULL,addline=NULL,xlim=NULL,ylim=NULL,...)
+    \method{plot}{singletable}(x,type=type,file=NULL,select=c(1,2)
+	,xlab=NULL,ylab=NULL,addline=NULL,xlim=NULL,ylim=NULL,...)
 }
 
 \arguments{  

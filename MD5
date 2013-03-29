@@ -1,12 +1,12 @@
-c7eb3d8a3d34d9d14d448fa7b2dee71b *DESCRIPTION
+fb96fca7a12fd11895c2527165e89547 *DESCRIPTION
 e33963d8f3ac52c2f13f86919c82f0f1 *NAMESPACE
 b710f46a89e65f58f99796d3de94ed6d *R/MLE.r
 513d51bd8ea4b1f2b49f7bdebd474fea *R/computation.r
-f79246f2d5fc7a769ca3fcfdfee88304 *R/densityfunction.r
+9dc72a0f01afe8d087431d00ea8dac1c *R/densityfunction.r
 79865a423072fc412bf66e8f318b7bbb *R/multiple.r
 42ca17e67e5cf78de7e61030eeb9b21c *R/multipleplot.r
 fabd5af842e8fba40c9184f898788af5 *R/overall.r
-9e765a9baea7bd84d5cabe781db40447 *R/sampling.r
+777b9b253d07327b449ac74e2ab3482e *R/sampling.r
 405caa8c1fcfc1708c42e5b37ff430ab *R/single.r
 9bb128e1a936551378a021fa8bd6264b *R/singleplot.r
 21804b82a8052ad67f447ffc03975f3b *R/summary.r
@@ -18,9 +18,9 @@ fabd5af842e8fba40c9184f898788af5 *R/overall.r
 1aafdf649bd5cbb9dc5c30d641b36552 *inst/winbugcode/SarmanovPosterior.txt
 a33b3fbe2d545e4224dd3c2c030f19e2 *man/colorectal.Rd
 097cfcb5744d61bc6f390b1c951a006e *man/diabetes.Rd
-f5f2258277a7cf86526f098f39464c70 *man/multipletables.rd
+7c1e30769ee5ab78d70bac6a52cc7230 *man/multipletables.rd
 7c0976c2a213dc9a5a9e847953264e3a *man/plot.multipletables.rd
-395b72dcc0e8a0694fe88db855d8e7c7 *man/plot.singletable.rd
+8af29286918a435593c26fa65bac7a70 *man/plot.singletable.rd
 dadae5f6852757d26ef00826d6042e69 *man/singletable.Rd
 6369372def53100db79d059e1229aff5 *man/summary.multipletables.rd
 e9d78490e815f4e2e512d13f1d34c025 *man/summary.singletable.rd
