@@ -1,7 +1,6 @@
 model {
   # this just has to be large enough to ensure all phi[i]'s > 0
   C <- 1000
-  zeros <- 0
   mp1 <- a1/(a1+b1)   # mu 1
   mp2 <- a2/(a2+b2)   # mu 2
   vp1 <- a1*b1/(a1+b1)/(a1+b1)/(a1+b1+1)  # var 1

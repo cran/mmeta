@@ -64,6 +64,7 @@ sideplot_single <- function(object,file=NULL,
     postscript(filename,horizontal=T)
     setwd(origen.path)
   }
+  if(is.null(file)) { dev.new() }
   par(mfrow=c(1,j))
 
   for (i in 1:length(select)) {
@@ -155,7 +156,7 @@ overlapplot_single <- function(object,select=c(1,2),
     postscript(filename,horizontal=T)
     setwd(origen.path)
   }
-
+  if(is.null(file)) { dev.new() }
   plot(density.select[[1]]$x, density.select[[1]]$y, type="l", lwd=2, axes = TRUE,
        ylim=c(ymin,ymax), xlim=c(xmin,xmax),ylab=ylab, xlab=xlab,...)
   for(i in 1:2) {

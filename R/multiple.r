@@ -6,8 +6,10 @@
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ######################################################################################
+
 multipletables <- function(data=NULL, measure=NULL, model="Sarmanov",
                            method="sampling", nsam=10000, alpha=0.05,seed=NULL) {
+ 
   if (is.null(measure)) stop("measure is missing")
   if (is.null(data)) stop("data is missing")
   y1 <- data$y1; y2 <- data$y2

@@ -10,6 +10,7 @@
 singletable <- function(y1=y1,n1=n1,y2=y2,n2=n2,measure=measure,model="Sarmanov",
                         method="exact",a1=0.5,b1=0.5,a2=0.5,b2=0.5,rho=0,alpha=0.05,
                         nsam=100000,seed=NULL) {
+  
   if (measure=="RD"& method=="exact") {
     print("only sampling based mehtod is available for RD")
     method <- "sampling"

@@ -9,7 +9,7 @@
 ### Data:    7/13/2012
 ######################################################################################
 sampling <- function(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,y1=0,n1=0,y2=0,n2=0,
-                     model="Sarmanov",measure=measure,nsam=10000,seed=seed) {
+                     model="Sarmanov",measure=measure,nsam=10000,seed=NULL) {
   if (model=="Independent")
     samples <- inde.sampling.posterior(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam,seed)
   else {
@@ -61,31 +61,47 @@ inde.sampling.posterior <- function(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam,seed) {
 ### Data:    7/13/2012
 ######################################################################################
 sar.sampling.posterior<-function(a1,a2,b1,b2,n1,y1,n2,y2,rho,measure,nsam,seed) {
-  code <- file.path(find.package("mmeta"), "winbugcode", "SarmanovPosterior.txt")
+  code <- file.path(find.package("mmeta"), "jagscode", "SarmanovPosterior.txt")
   mu1 <- a1/(a1+b1); mu1.1 <- 1-mu1
   mu2 <- a2/(a2+b2); mu2.1 <- 1-mu2
   omega <- rho/sqrt(mu1*mu1.1/(a1+b1+1))/sqrt(mu2*mu2.1/(a2+b2+1))
-  data <- list(rho=rho, alpha1=a1+y1, beta1=n1-y1+b1, alpha2=a2+y2, beta2=n2-y2+b2,
-               a1=a1, b1=b1, a2=a2, b2=b2)
-  bugsData(data, fileName="DataR.txt", digits=6)
-  init <- list(p1=0.5, p2=0.5)
-  bugsData(init, fileName="InitR.txt", digits=6)
-  modelCheck(code)     ###hwo to set relative paht???
-  if(!is.null(seed))modelSetRN(seed)
-  modelData("DataR.txt")
-  modelCompile(numChains=1)
-  modelInits("InitR.txt")
-  modelGenInits()
-  if(!is.null(seed))modelSetRN(seed)
-  modelUpdate(nsam)
-  samplesSet(c("OR","RR","RD"))
-  samplesSetThin(2)
-  modelUpdate(2*nsam)                                                             
-
-  if (measure=="OR") return(samplesSample(node=c("OR")))
-  if(measure=="RR")  return(samplesSample(node=c("RR")))
-  if(measure=="RD")  return(samplesSample(node=c("RD")))
-
-  unlink("InitR.txt",recursive=F)                                                              
-  unlink("DataR.txt",recursive=F)
+  #if(!is.null(seed)) set.seed(seed)
+  #jags <- rjags::jags.model(code,
+  #                 data = list(rho=rho, alpha1=a1+y1, beta1=n1-y1+b1,
+#				   alpha2=a2+y2, beta2=n2-y2+b2,
+ #                  a1=a1, b1=b1, a2=a2, b2=b2),
+#				   inits=list(p1=0.5,p2=0.5),
+#                   n.chains =1,
+ #                  n.adapt = nsam,quiet=TRUE)                                                          
+  #samples=unlist(rjags::jags.samples(jags,measure,nsam,quiet=TRUE))
+  #return(samples)
+  if(!is.null(seed)) set.seed(seed)
+  alpha1 <- a1+y1
+  beta1 <- b1+n1-y1
+  alpha2 <- a2+y2
+  beta2 <- b2+n2-y2
+  parm=c(alpha1,beta1,alpha2,beta2,rho)
+  #samples=rejection.sampling(alpha1,beta1,alpha2,alpha2,rho,nsam=nsam)
+  samples <- HI::arms(c(0.5,0.5),logSarmanov.dens,supoort,nsam,parm)
+  if (measure=="OR") return(samples[,2]/(1-samples[,2])*(1-samples[,1])/samples[,1])
+  if (measure=="RR") return(samples[,2]/samples[,1])
+  if (measure=="RD") return(samples[,2]-samples[,1])
+  
 }
+
+
+logSarmanov.dens <- function(x,parm) {
+  p1=x[1]
+  p2=x[2]
+  a1=parm[1]
+  b1=parm[2]
+  a2=parm[3]
+  b2=parm[4]
+  rho=parm[5]
+  mu1 <- a1/(a1+b1); mu2 <- a2/(a2+b2)
+  delta1 <- sqrt(mu1*(1-mu1)/(a1+b1+1)); delta2 <- sqrt(mu2*(1-mu2)/(a2+b2+1))
+  return(log(dbeta(p1,shape1=a1,shape2=b1)*dbeta(p2,shape1=a2,shape2=b2)))
+   
+}
+
+supoort<-function(x,parm) return(all(x>0)&all(x<1))

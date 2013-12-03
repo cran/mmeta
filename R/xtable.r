@@ -13,6 +13,6 @@ xtable.multipletables<-function(x,caption = NULL, label = NULL, align = NULL,
   model <- x$model
   reports <- study_specifc(x)
   tables <- as.data.frame(reports)
-  table.latex <- xtable(tables,label=paste("Study-specific",measure),...)
+  table.latex <- xtable::xtable(tables,label=paste("Study-specific",measure),...)
   return(table.latex)
 }

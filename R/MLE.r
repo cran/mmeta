@@ -126,7 +126,7 @@ myLik.indep.log <- function(mypar, mydat) {
 ### Data:    7/13/2012
 ########################################################################################################
 initial.val.gen <- function(y, n) {
-  BBfit <- betabin(cbind(y, n-y)~1, ~1, data=data.frame(y=y,n=n))
+  BBfit <- aod::betabin(cbind(y, n-y)~1, ~1, data=data.frame(y=y,n=n))
   a.ini <- expit(as.numeric(BBfit@param[1]))*(1/as.numeric(BBfit@param[2])-1)
   b.ini <- (1/as.numeric(BBfit@param[2])-1)*(1-expit(as.numeric(BBfit@param[1])))
   return(list(a=a.ini, b=b.ini))

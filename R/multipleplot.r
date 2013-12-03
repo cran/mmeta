@@ -110,6 +110,7 @@ forestplot <- function(object,select=NULL,xlab=NULL,ylab=NULL,
     postscript(paste(file,".eps",sep=""),horizontal=T)
     setwd(origen.path)
   }
+  if(is.null(file)) { dev.new() }
   par(mar=mar)
   plot(0,0,type="n", xlab=xlab, ylab=ylab, yaxt="n", xaxt="n", xaxs="i",
        yaxs="r",ylim=c(0,nselect+1), xlim=c(xmin,xmax),...)
@@ -185,7 +186,7 @@ sideplot_multiple <- function(object,select=NULL,
       setwd(savepath)
       postscript(filename,horizontal=T)
       setwd(origen.path)
-    }  else x11()
+    }  else  { dev.new() }
     par(mfrow=c(rownumber,colnumber))
     par(mar=mar)
     ibegin <- (j-1)*4+1; iend<- min(j*4,n.select)
@@ -283,6 +284,7 @@ overlapplot_multiple <- function(object,file=NULL,
     postscript(paste(file,".eps",sep=""),horizontal=T)
     setwd(origen.path)
   }
+  if(is.null(file)) { dev.new() }
   par(mar=mar)
   if(!is.null(xlabel)){
     plot(density.select[[1]]$x,density.select[[1]]$y, type="l",
