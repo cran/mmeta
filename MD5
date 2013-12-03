@@ -1,4 +1,4 @@
-1416cc0a1557dad283b566e736ec2ef0 *DESCRIPTION
+78574aa8f4aa54ce493329080c763616 *DESCRIPTION
 5d18dd340048f37c8a2d8dd981ee0b66 *NAMESPACE
 8d055c296c4354d469bfc5034c5c4946 *R/MLE.r
 513d51bd8ea4b1f2b49f7bdebd474fea *R/computation.r
@@ -13,13 +13,14 @@ a7d9d9404a2831c6bbca4018cc08be70 *R/singleplot.r
 7efb5eccad22f6b517108ac6976dce72 *data/colorectal.rda
 648fb491475e0eda834f583bb25faf15 *data/diabetes.rda
 974d14e86af9ce362a3628a217242b88 *data/withdrawal.rda
+341813c673a26945f0a1c9f124830ec6 *inst/CITATION
 dbd324ac965a8c50a5b360862bd1114b *man/colorectal.Rd
 92d364f4fdae480dedd1c4fdd67bdc36 *man/diabetes.Rd
-0f12042a360b0afa42dbd73a0c8aa9c1 *man/multipletables.rd
-edc855621ec1ed417daec0eb046841b1 *man/plot.multipletables.rd
-5ef7a9319df13aecd401b27e7ef8d418 *man/plot.singletable.rd
-d90b01b1f9e158169b775df1d73f0c85 *man/singletable.Rd
-773906213b854154b38ac13f74ce9026 *man/summary.multipletables.rd
-e9d78490e815f4e2e512d13f1d34c025 *man/summary.singletable.rd
+27b25248103f4b4d2e581e36aa3af22c *man/multipletables.rd
+b27021c4b0ce0385eb514d3c935ffc66 *man/plot.multipletables.rd
+3ac7aa3eaa2673eb76bb966443cac8e1 *man/plot.singletable.rd
+ed05d5f14ae317484a994068d28d195f *man/singletable.Rd
+9c9368c1a94d95afd2d664135a34b31d *man/summary.multipletables.rd
+616975215912df251b670a2d3c0c4a46 *man/summary.singletable.rd
 e94883a287ed300fcac52c69dc63f0df *man/withdrawal.Rd
 7b268128df741949da6ba269f849a121 *src/hygfx.f

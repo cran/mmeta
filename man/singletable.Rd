@@ -89,23 +89,31 @@
 }
 
 \references{
-Chen, Y., Luo, S., (2011a). A few remarks on 'Statistical distribution of
-the difference of two proportions'. Statistics in Medicine 30, 1913-1915.
 
-Chen, Y., Chu, H., Luo, S., Nie, L., and Chen, S. (2011b). Bayesian
+Luo, S., Chen, Y., Su, X., Chu, H., (2014). mmeta: An R Package for
+Multivariate Meta-Analysis. Journal of Statistical Software, 56(11), 1-26. 
+
+Chen, Y., Luo, S., (2011a). A Few Remarks on "Statistical Distribution of the Difference of
+Two Proportions' by Nadarajah and Kotz, Statistics in Medicine 2007; 26(18):3518-3523" .
+Statistics in Medicine, 30(15), 1913-1915. 
+
+Chen, Y., Chu, H., Luo, S., Nie, L., and Chen, S. (2014a). Bayesian
 analysis on meta-analysis of case-control studies accounting for
 within-study correlation. Statistical Methods in Medical Research,
-Published online on Dec 4, 2011, PMID: 22143403. doi: 10.1177/0962280211430889
+doi: 10.1177/0962280211430889. In press. 
 
-Chen, Y., Luo, S., Chu, H., Su, X., and Nie, L. (2012a). An empirical
+
+Chen, Y., Luo, S., Chu, H., Su, X., and Nie, L. (2014b). An empirical
 Bayes method for multivariate meta-analysis with an application in
-clinical trials. in press, Communication in Statistics:
-Theory and Methods.
+clinical trials. Communication in Statistics: Theory and Methods. In press. 
 
 Chen, Y., Luo, S., Chu, H., Wei, P. (2013). Bayesian inference on risk
 differences: an application to multivariate meta-analysis of adverse
-events in clinical trials. in press, Statistics in Biopharmaceutical Research.
+events in clinical trials. Statistics in Biopharmaceutical Research, 5(2), 142-155.
+
+
 }
+
 
 
 
