@@ -47,7 +47,7 @@ of relative risk and risk difference for multiple 2X2 tables.
   \code{\link{multipletables}},
   \code{\link{summary.multipletables}},
   \code{\link{plot.multipletables}},
-  \code{\link{xtable.multipletables}}    
+ 
 }
 
 \examples{

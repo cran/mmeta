@@ -37,9 +37,7 @@ summary.multipletables <- function(object,...) {
   studynames <- object$studynames
 
   siglevel <- paste(as.character((1-alpha)*100),"%",sep="")
-  cat("###########",fill=TRUE)
-  cat("##Summary##",fill=TRUE)
-  cat("###########",fill=TRUE)
+
   if (model=="Sarmanov") cat("Model: Sarmanov Beta-Binomial Model",fill=TRUE)
   if (model=="Independent") cat("Model: Independent Beta-Binomial Model",fill=TRUE)
    
@@ -87,9 +85,7 @@ summary_single_sampling <- function(object) {
   siglevel <- paste(as.character((1-alpha)*100),"%",sep="")
   measure<-object$measure
   studynames<-object$studynames
-  cat("***********", fill=TRUE)
-  cat("**Summary**", fill=TRUE)
-  cat("***********", fill=TRUE) 
+  
   cat("Measure:",measurename,fill=TRUE)
   if (model=="Sarmanov") {
     cat("Model: Sarmanov Beta-Binomial Model",fill=TRUE)
@@ -139,7 +135,7 @@ study_specifc <- function(object) {
     reports[1:k,3] <- sapply(object$sample,quantile,probs=1-alpha/2,na.rm=TRUE)
     reports[(k+1),1:3] <- c(object$overall$overall,object$overall$CI[1],object$overall$CI[2])
     rownames(reports) <- c(studynames,"Overall")
-    colnames(reports) <- c("Mean","lower bound","upper bound")  
+    colnames(reports) <- c("Mean","Lower Bound","Upper Bound")  
     out[[1]] <- reports
   
   return(out)

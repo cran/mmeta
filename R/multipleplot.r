@@ -1,13 +1,14 @@
 ######################################################################################
+######################################################################################
 ### Purpose: the wrapper of S3 method "plot" for object "multipletables"
 ### Input:   the object "multipletables"
-### Output:  no return value.The plot may be saved as a eps file or print in x11 windows
+### Output:  no return value.The plot may be saved as a pdf file or print in x11 windows
 ### Note:    the implement are functions "sideplot_multiple","overlapplot_multiple","forestplot"
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ######################################################################################
 plot.multipletables <- function(x,type=NULL,select=NULL,file=NULL, xlim=NULL,ylim=NULL,
-                                xlabel=NULL,mar=c(5, 10, 4, 9),xlog=TRUE,
+                                xlabel=NULL,mar=NULL,xlog=TRUE,
                                 addline=NULL,xlab=NULL,ylab=NULL,ciShow=TRUE,...) {
   if (!inherits(x, "multipletables"))
     stop("Use only with 'multiple' xs.\n")
@@ -46,7 +47,7 @@ plot.multipletables <- function(x,type=NULL,select=NULL,file=NULL, xlim=NULL,yli
 #########################################################################################
 ### Purpose: plot the forest plot
 ### Input:   S3 object "multipletables" 
-### Output:  no return value.The plot may be saved as a eps file or print in x11 windows
+### Output:  no return value.The plot may be saved as a pdf file or print in x11 windows
 ### Note:    the wrapper is function "plot.multipletables"
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
@@ -107,11 +108,11 @@ forestplot <- function(object,select=NULL,xlab=NULL,ylab=NULL,
     savepath <- file.path(getwd(),"mmeta")
     dir.create(savepath,showWarnings = FALSE)
     setwd(savepath)
-    postscript(paste(file,".eps",sep=""),horizontal=T)
+    pdf(paste(file,".pdf",sep=""))
     setwd(origen.path)
   }
-  if(is.null(file)) { dev.new() }
-  par(mar=mar)
+ # if(is.null(file)) { dev.new() }
+  if(!is.null(mar)) par(mar=mar) else par(mar=c(4, 5, 3, 6))
   plot(0,0,type="n", xlab=xlab, ylab=ylab, yaxt="n", xaxt="n", xaxs="i",
        yaxs="r",ylim=c(0,nselect+1), xlim=c(xmin,xmax),...)
   segments(report.select[nselect:1,2], 1:nselect ,report.select[nselect:1,3],1:nselect,lwd=2)
@@ -143,14 +144,14 @@ forestplot <- function(object,select=NULL,xlab=NULL,ylab=NULL,
 
   if (!is.null(file)) {
     dev.off()
-    cat( file, ".eps have been saved in:", savepath, fill=TRUE)
+    cat( file, ".pdf have been saved in:", savepath, fill=TRUE)
   }
 }
  
 #############################################################################################
 ### Purpose: plot the posterir distribution in a side by side manner
 ### Input:   S3 object "multipletables" ,other input refers to the help file "plot.multiple"
-### Output:  no return value.The plot may be saved as a eps file or print in x11 windows
+### Output:  no return value.The plot may be saved as a pdf file or print in x11 windows
 ### Note:    the wrapper is function "plot.multipletables"
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
@@ -182,13 +183,14 @@ sideplot_multiple <- function(object,select=NULL,
       origen.path <- getwd()
       savepath <- file.path(getwd(),"mmeta")
       dir.create(savepath,showWarnings = FALSE)
-      filename <- paste(file,j,".eps",sep="")
+      filename <- paste(file,j,".pdf",sep="")
       setwd(savepath)
-      postscript(filename,horizontal=T)
+      pdf(filename)
       setwd(origen.path)
     }  else  { dev.new() }
     par(mfrow=c(rownumber,colnumber))
-    par(mar=mar)
+    if(!is.null(mar)) par(mar=mar) else par(mar=c(4, 3, 2, 1))
+
     ibegin <- (j-1)*4+1; iend<- min(j*4,n.select)
     for (i in ibegin:iend) {
       xmin <- quantile(sample.select[[i]],probs=alpha/10 ,na.rm=TRUE)
@@ -229,7 +231,7 @@ sideplot_multiple <- function(object,select=NULL,
 #############################################################################################
 ### Purpose: plot the overlaid posterir distributions
 ### Input:   S3 object "multipletables" ,other input refers to the help file "plot.multiple"
-### Output:  no return value.The plot may be saved as a eps file or print in x11 windows
+### Output:  no return value.The plot may be saved as a pdf file or print in x11 windows
 ### Note:    the wrapper is function "plot.multipletables"
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
@@ -281,11 +283,11 @@ overlapplot_multiple <- function(object,file=NULL,
     savepath <- file.path(getwd(),"mmeta")
     dir.create(savepath,showWarnings = FALSE)
     setwd(savepath)
-    postscript(paste(file,".eps",sep=""),horizontal=T)
+    pdf(paste(file,".pdf",sep=""))
     setwd(origen.path)
   }
-  if(is.null(file)) { dev.new() }
-  par(mar=mar)
+ # if(is.null(file)) { dev.new() }
+   if(!is.null(mar)) par(mar=mar) else par(mar=c(4, 3, 3, 3))
   if(!is.null(xlabel)){
     plot(density.select[[1]]$x,density.select[[1]]$y, type="l",
          lwd=2,lty=1,xaxt="n",ylab=ylab, xlab=xlab,
@@ -306,7 +308,7 @@ overlapplot_multiple <- function(object,file=NULL,
 
   if (!is.null(file)) {
     dev.off()
-    cat( file,".eps have been saved in:", savepath,fill=TRUE)
+    cat( file,".pdf have been saved in:", savepath,fill=TRUE)
   }
 }
 

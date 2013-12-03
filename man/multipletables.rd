@@ -7,7 +7,7 @@
 }
 \usage{
   multipletables(data=NULL, measure=NULL, model="Sarmanov",
-                           method="sampling", nsam=10000, alpha=0.05, seed=NULL)    
+                           method="sampling", nsam=10000, alpha=0.05)    
 }
 
 \arguments{
@@ -25,10 +25,6 @@
       Monte Carlo sampling. \code{exact} is exact method.}
    \item{alpha}{a numeric value specifying the significant level. Default value sets to 0.05.}
    \item{nsam}{a numeric value specifying the number of samples if method is \code{sampling}. Default value sets to \code{10000}}  
-   \item{seed}{An integer from 1 to 14. The internal state of the
-     OpenBUGS random number generator can be set to one of 14 predefined
-     states. Each predefined state is 1012 draws apart to avoid overlap
-     in random number sequences. Default value set to NULL.}
  }
 
 \details{There are two kinds of study design, i.e., prospective study or
@@ -135,7 +131,6 @@ events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 
 \seealso{\code{\link{plot.multipletables}}
          \code{\link{summary.multipletables}}
-         \code{\link{xtable.multipletables}}
        }
 	
 \examples{
@@ -154,8 +149,6 @@ events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 #side-by-side manner 
 #plot(multiple.OR, type="sidebyside", select=c(4,14,16,20), ylim=c(0,2.7),
 # xlim=c(0.5,1.5),file="sidebysideOR")
-# Convert R object to an xtable object to be printed as a Latex or HTML table
-#multiple.OR.table <- xtable(multiple.OR)
 #print(multiple.OR.table)
 #print(multiple.OR.table, type="html")
 
@@ -168,7 +161,6 @@ events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 #plot(multiple.RR, type="overlap", select=c(3,8,14,16))
 #plot(multiple.RR, type="sidebyside", select=c(3,8,14,16), 
 #ylim=c(0,1.2), xlim=c(0.4,3))
-#multiple.RR.table <- xtable(multiple.RR)
 #print(multiple.RR.table)
 #print(multiple.RR.table, type="html")
 
@@ -182,7 +174,6 @@ events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 #plot(multiple.RD, type="sidebyside", select=c(3,8,14,16))
 #plot(multiple.RD, type="sidebyside", select=c(3,8,14,16),
 #     ylim=c(0,6), xlim=c(-0.2,0.4))
-#multiple.RD.table <- xtable(multiple.RD)
 #print(multiple.RD.table)
 #print(multiple.RD.table, type="html")
 }      

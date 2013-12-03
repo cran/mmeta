@@ -9,7 +9,7 @@
 \usage{
    singletable(y1=y1,n1=n1,y2=y2,n2=n2,measure=measure,model="Sarmanov",
                         method="exact",a1=0.5,b1=0.5,a2=0.5,b2=0.5,rho=0,alpha=0.05,
-                        nsam=100000,seed=NULL)
+                        nsam=10000)
 }
 
 \arguments{
@@ -40,9 +40,8 @@
      Sarmanov bivariate prior distribution. Default value set to 0. It
    is subject to constraints. See Details.}
    \item{alpha}{a numeric value specifying the significant level. Default value sets to 0.05.}
-   \item{nsam}{a numeric value specifying the number of samples if method is "sampling". Default value sets to \code{100000}} 
-   \item{seed}{An integer from 1 to 14. The internal state of the OpenBUGS random number generator can be set to one of 14 predefined states. Each predefined state is 1012 draws apart to avoid overlap in random number sequences.Default value set to NULL.}
-  
+   \item{nsam}{a numeric value specifying the number of samples if method is "sampling". Default value sets to \code{10000}} 
+   
  }
 
 \details{There are two kinds of study design, i.e., prospective study or

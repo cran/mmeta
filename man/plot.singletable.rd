@@ -36,7 +36,7 @@
      the prior distribution are overlaid in one plot. 
      
      If \code{file=NULL}, the plots will be displayed on screen. Or
-     else, the plots will be saved as "./mmeta/code{file}.eps", where
+     else, the plots will be saved as "./mmeta/code{file}.pdf", where
      "./" denotes current working directory.
 }
 

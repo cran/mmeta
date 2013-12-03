@@ -9,7 +9,7 @@
 ######################################################################################
 singletable <- function(y1=y1,n1=n1,y2=y2,n2=n2,measure=measure,model="Sarmanov",
                         method="exact",a1=0.5,b1=0.5,a2=0.5,b2=0.5,rho=0,alpha=0.05,
-                        nsam=100000,seed=NULL) {
+                        nsam=10000) {
   
   if (measure=="RD"& method=="exact") {
     print("only sampling based mehtod is available for RD")
@@ -77,11 +77,11 @@ singletable <- function(y1=y1,n1=n1,y2=y2,n2=n2,measure=measure,model="Sarmanov"
 
   mysample <- list()
   temp <- sampling(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,n1=n1,y1=y1,
-                            n2=n2,y2=y2,measure=measure,model=model,nsam=nsam,seed=seed)
+                            n2=n2,y2=y2,measure=measure,model=model,nsam=nsam)
   upper=quantile(temp,prob=0.9995,na.rm=T)
   mysample[[1]]=temp[temp<=upper]  
   temp<- sampling(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,n1=0,y1=0,n2=0,
-                            y2=0,measure=measure,model=model,nsam=nsam,seed=seed)
+                            y2=0,measure=measure,model=model,nsam=nsam)
   upper=quantile(temp,prob=0.9995,na.rm=T)
   mysample[[2]]=temp[temp<=upper]
   
@@ -109,5 +109,5 @@ singletable <- function(y1=y1,n1=n1,y2=y2,n2=n2,measure=measure,model="Sarmanov"
                  studynames=studynames,measurename=measurename)
 
   class(result) <- "singletable"
-  return(result)
+  invisible(result)
 }     

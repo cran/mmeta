@@ -6,7 +6,7 @@
 }
 \usage{
     \method{plot}{multipletables}(x,type=NULL,select=NULL,file=NULL, xlim=NULL,ylim=NULL,
-                                xlabel=NULL,mar=c(5, 10, 4, 9),xlog=TRUE,
+                                xlabel=NULL,mar=NULL,xlog=TRUE,
                                 addline=NULL,xlab=NULL,ylab=NULL,ciShow=TRUE,...)
 }
 
@@ -37,7 +37,7 @@
      \code{OR} and \code{RR} and \code{FALSE} for measure \code{RD}.} 
    \item{mar}{A numerical vector of 4 values which control the space (in the number of lines)
      between the axes and the border of the graph of the form
-     \code{c(bottom, left, top, right)} the default values are \code{c(5.1, 4.1, 4.1, 2.1)}.}
+     \code{c(bottom, left, top, right)} the default values are NULL.}
     \item{ciShow}{a logical value; if \code{TRUE} (default), the true
       credible intervals numbers will display at the right hand side of
       the forest plot.}
@@ -58,7 +58,7 @@
        plotted.
        
      If \code{file=NULL}, the plots will be displayed on screen. Or
-     else, the plots will be saved as "./mmeta/code{file}.eps", where
+     else, the plots will be saved as "./mmeta/code{file}.pdf", where
      "./" denotes current working directory.
 }
 
@@ -85,7 +85,6 @@ events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 
 \seealso{\code{\link{multipletables}}
          \code{\link{summary.multipletables}}
-         \code{\link{xtable.multipletables}}
        }
 
 \examples{

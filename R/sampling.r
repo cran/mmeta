@@ -9,9 +9,9 @@
 ### Data:    7/13/2012
 ######################################################################################
 sampling <- function(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,y1=0,n1=0,y2=0,n2=0,
-                     model="Sarmanov",measure=measure,nsam=10000,seed=NULL) {
+                     model="Sarmanov",measure=measure,nsam=1000) {
   if (model=="Independent")
-    samples <- inde.sampling.posterior(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam,seed)
+    samples <- inde.sampling.posterior(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam)
   else {
     if (model=="Sarmanov") {
       cc <- sqrt(a1*a2*b1*b2)/sqrt((a1+b1+1)*(a2+b2+1))
@@ -22,7 +22,7 @@ sampling <- function(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,y1=0,n1=0,y2=0,n2=0,
       if (rho > upper.bound | rho < lower.bound)
         stop(paste("rho is out of bound: ",
                    lower.bound, upper.bound))
-      samples <- sar.sampling.posterior(a1,a2,b1,b2,n1,y1,n2,y2,rho,measure,nsam,seed)
+      samples <- sar.sampling.posterior(a1,a2,b1,b2,n1,y1,n2,y2,rho,measure,nsam)
     }
   }
   return(samples)
@@ -37,12 +37,11 @@ sampling <- function(a1=a1,b1=b1,a2=a2,b2=b2,rho=rho,y1=0,n1=0,y2=0,n2=0,
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ##########################################################################################
-inde.sampling.posterior <- function(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam,seed) {
+inde.sampling.posterior <- function(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam) {
   alpha1 <- a1+y1
   beta1 <- b1+n1-y1
   alpha2 <- a2+y2
   beta2 <- b2+n2-y2
-  if(!is.null(seed)) set.seed(seed)
   p1 <- rbeta(nsam, shape1=alpha1, shape2=beta1)
   p2 <- rbeta(nsam, shape1=alpha2, shape2=beta2)
 
@@ -60,7 +59,7 @@ inde.sampling.posterior <- function(a1,b1,a2,b2,n1,y1,n2,y2,measure,nsam,seed) {
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
 ######################################################################################
-sar.sampling.posterior<-function(a1,a2,b1,b2,n1,y1,n2,y2,rho,measure,nsam,seed) {
+sar.sampling.posterior<-function(a1,a2,b1,b2,n1,y1,n2,y2,rho,measure,nsam) {
   code <- file.path(find.package("mmeta"), "jagscode", "SarmanovPosterior.txt")
   mu1 <- a1/(a1+b1); mu1.1 <- 1-mu1
   mu2 <- a2/(a2+b2); mu2.1 <- 1-mu2
@@ -75,7 +74,6 @@ sar.sampling.posterior<-function(a1,a2,b1,b2,n1,y1,n2,y2,rho,measure,nsam,seed) 
  #                  n.adapt = nsam,quiet=TRUE)                                                          
   #samples=unlist(rjags::jags.samples(jags,measure,nsam,quiet=TRUE))
   #return(samples)
-  if(!is.null(seed)) set.seed(seed)
   alpha1 <- a1+y1
   beta1 <- b1+n1-y1
   alpha2 <- a2+y2

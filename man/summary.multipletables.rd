@@ -62,7 +62,6 @@ events in clinical trials. in press, Statistics in Biopharmaceutical Research.
 
 \seealso{\code{\link{multipletables}}
          \code{\link{plot.multipletables}}
-         \code{\link{xtable.multipletables}}
        }
 
 

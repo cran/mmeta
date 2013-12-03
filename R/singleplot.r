@@ -1,7 +1,7 @@
 ##############################################################################################
 ### Purpose: the wrapper of S3 method "plot" for object "singletable"
 ### Input:   the object "singletable"
-### Output:  no return value.The plot may be saved as a eps file or be printed in x11 windows
+### Output:  no return value.The plot may be saved as a pdf file or be printed in x11 windows
 ### Note:    This function calls functions "sideplot_single", "overlapplot_single"
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
@@ -31,7 +31,7 @@ plot.singletable <- function(x,type=type,file=NULL,select=c(1,2),
 ################################################################################################
 ### Purpose: Plot the posterior distributuions in a side by side manner
 ### Input:   S3 object "singletable" ,other input refers to the help file "plot.single"
-### Output:  no return value. The plot may be saved as a eps file or be printed in x11 windows
+### Output:  no return value. The plot may be saved as a pdf file or be printed in x11 windows
 ### Note:    This function is called by wrapper function "plot.singletable"
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
@@ -59,12 +59,12 @@ sideplot_single <- function(object,file=NULL,
     origen.path <- getwd()
     savepath <- file.path(getwd(),"mmeta")
     dir.create(savepath,showWarnings = FALSE)
-    filename <- paste(file,".eps",sep="")
+    filename <- paste(file,".pdf",sep="")
     setwd(savepath)
-    postscript(filename,horizontal=T)
+    pdf(filename)
     setwd(origen.path)
   }
-  if(is.null(file)) { dev.new() }
+ # if(is.null(file)) { dev.new() }
   par(mfrow=c(1,j))
 
   for (i in 1:length(select)) {
@@ -97,7 +97,7 @@ sideplot_single <- function(object,file=NULL,
 ################################################################################################
 ### Purpose: Plot the overlaid posterior distributuions
 ### Input:   S3 object "singletable" ,other input refers to the help file "plot.single"
-### Output:  no return value. The plot may be saved as a eps file or be printed in x11 windows
+### Output:  no return value. The plot may be saved as a pdf file or be printed in x11 windows
 ### Note:    This function is called by function "plot.singletable"
 ### Author:  Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
 ### Data:    7/13/2012
@@ -151,12 +151,12 @@ overlapplot_single <- function(object,select=c(1,2),
     origen.path <- getwd()
     savepath <- file.path(getwd(),"mmeta")
     dir.create(savepath,showWarnings = FALSE)
-    filename <- paste(file,".eps",sep="")
+    filename <- paste(file,".pdf",sep="")
     setwd(savepath)
-    postscript(filename,horizontal=T)
+    pdf(filename)
     setwd(origen.path)
   }
-  if(is.null(file)) { dev.new() }
+  #if(is.null(file)) { dev.new() }
   plot(density.select[[1]]$x, density.select[[1]]$y, type="l", lwd=2, axes = TRUE,
        ylim=c(ymin,ymax), xlim=c(xmin,xmax),ylab=ylab, xlab=xlab,...)
   for(i in 1:2) {
