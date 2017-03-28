@@ -80,7 +80,7 @@ sar.sampling.posterior<-function(a1,a2,b1,b2,n1,y1,n2,y2,rho,measure,nsam) {
   beta2 <- b2+n2-y2
   parm=c(alpha1,beta1,alpha2,beta2,rho)
   #samples=rejection.sampling(alpha1,beta1,alpha2,alpha2,rho,nsam=nsam)
-  samples <- HI::arms(c(0.5,0.5),logSarmanov.dens,supoort,nsam,parm)
+  samples <- arms(c(0.5,0.5),logSarmanov.dens,supoort,nsam,parm)
   if (measure=="OR") return(samples[,2]/(1-samples[,2])*(1-samples[,1])/samples[,1])
   if (measure=="RR") return(samples[,2]/samples[,1])
   if (measure=="RD") return(samples[,2]-samples[,1])

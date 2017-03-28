@@ -1,3 +1,14 @@
+# Import functions
+importFrom("grDevices", "dev.new", "dev.off", "pdf")
+importFrom("graphics", "abline", "arrows", "axis", "legend", "par",
+             "plot", "points", "segments")
+importFrom("stats", "dbeta", "density", "median", "optim", "pchisq",
+             "qnorm", "quantile", "rbeta")
+importFrom("stats", "rnorm", "runif")
+
+
+useDynLib(mmeta,.registration = TRUE)
+
 # Exported functions
 export(singletable,multipletables,
         plot.multipletables,  summary.multipletables, 

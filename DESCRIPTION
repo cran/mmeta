@@ -1,16 +1,16 @@
 Package: mmeta
 Type: Package
 Title: Multivariate Meta-Analysis
-Version: 2.2
-Date: 2013-12-3
+Version: 2.3
+Date: 2017-3-26
 Author: Sheng Luo, Yong Chen, Xiao Su, Haitao Chu
-Maintainer: Xiao Su <Xiao.Su@uth.tmc.edu>
-Description: This package implements a novel multivariate meta-analysis.
+Maintainer: Xiao Su <esuxiao@gmail.com>
+Description: A novel multivariate meta-analysis.
 Depends: R (>= 2.10.0)
-Imports: aod,HI
+Imports: aod
 License: GPL (>= 2)
 LazyLoad: no
-Packaged: 2014-01-30 17:15:55 UTC; xsu
+Packaged: 2017-03-27 15:19:52 UTC; xsu2
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2014-01-30 21:12:42
+Date/Publication: 2017-03-28 06:00:09 UTC

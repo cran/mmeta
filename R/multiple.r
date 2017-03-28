@@ -12,6 +12,7 @@ multipletables <- function(data=NULL, measure=NULL, model="Sarmanov",
  
   if (is.null(measure)) stop("measure is missing")
   if (is.null(data)) stop("data is missing")
+  if (!model%in%c("Sarmanov","Independent")) stop("Only \'Independent\' and \'Sarmanov\' are supported. ")
   y1 <- data$y1; y2 <- data$y2
   n1 <- data$n1; n2 <- data$n2
   studynames <- data$studynames

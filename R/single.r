@@ -15,6 +15,7 @@ singletable <- function(y1=y1,n1=n1,y2=y2,n2=n2,measure=measure,model="Sarmanov"
     print("only sampling based mehtod is available for RD")
     method <- "sampling"
   }
+  if (!model%in%c("Sarmanov","Independent")) stop("Only \'Independent\' and \'Sarmanov\' are supported. ")
 
   if(length(y1)>=2 |length(n1)>=2 |length(y2)>=2 |length(n2)>=2 )
     stop ("only for single table analysis \n")

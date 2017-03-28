@@ -22,7 +22,7 @@
      \code{OR}, \code{RR}, and \code{RD}. \code{OR} is odds
      ratio, \code{RR} is relative risk, and \code{RD} is risk difference.}
    \item{model}{a character string specifying the model. Options are
-     \code{independent} and \code{Sarmanov}. \code{Independent} is
+     \code{Independent} and \code{Sarmanov}. \code{Independent} is
      independent beta-binomial model. \code{Sarmanov}is Sarmanov
      beta-binomial model.}
     \item{method}{a character string specifying the method. Options are

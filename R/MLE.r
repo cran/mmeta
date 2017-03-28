@@ -14,7 +14,6 @@ MLE.function <- function(y1=y1,n1=n1,y2=y2,n2=n2,model=model) {
   init.val[2] <- log(fit1$b)   
   init.val[3] <- log(fit2$a);
   init.val[4] <- log(fit2$b)
-
   MLE.sar.log <- optim(init.val, myLik.sar.log, method = "L-BFGS-B",
                        lower=rep(-20,5), upper=rep(20,5),
                        control = list(fnscale=-1,maxit=1000),
@@ -23,7 +22,6 @@ MLE.function <- function(y1=y1,n1=n1,y2=y2,n2=n2,model=model) {
                         lower=rep(-20,4), upper=rep(20,4),
                         control = list(fnscale=-1,maxit=1000),
                         hessian = T, mydat=list(y1=y1,n1=n1,y2=y2,n2=n2))
-
   if (model=="Sarmanov") {
     mypar <- par.cal(MLE.sar.log$par); ##tranfer back to original scale
     rho <- mypar[5];
