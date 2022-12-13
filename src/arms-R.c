@@ -82,9 +82,9 @@ double logshift(double y, double y0);
 
 double perfunc(SEXP myldens, ENVELOPE *env, double x, SEXP rho);
 
-void display(FILE *f, ENVELOPE *env);
+//void display(FILE *f, ENVELOPE *env);
 
-double u_random();
+double u_random(void);
 
 /**************************************************************/
 
@@ -806,15 +806,15 @@ double perfunc(SEXP myldens, ENVELOPE *env, double x, SEXP rho)
   return y;
 }
 
-/* *********************************************************************** */
+/* ************************************************
 
 void display(FILE *f, ENVELOPE *env)
 
-/* to display envelope - for debugging only */
+// to display envelope - for debugging only
 {
   POINT *q;
 
-  /* print envelope attributes */
+  // print envelope attributes
   fprintf(f,"========================================================\n");
   fprintf(f,"envelope attributes:\n");
   fprintf(f,"points in use = %d, points available = %d\n",
@@ -824,11 +824,11 @@ void display(FILE *f, ENVELOPE *env)
   fprintf(f,"convexity adjustment = %f\n",*(env->convex));
   fprintf(f,"--------------------------------------------------------\n");
 
-  /* find leftmost POINT */
+  // find leftmost POINT 
   q = env->p;
   while(q->pl != NULL)q = q->pl;
 
-  /* now print each POINT from left to right */
+  // now print each POINT from left to right
   for(q = env->p; q != NULL; q = q->pr){
     fprintf(f,"point at %x, left at %x, right at %x\n",q,q->pl,q->pr);
     fprintf(f,"x = %f, y = %f, ey = %f, cum = %f, f = %d\n",
@@ -838,10 +838,11 @@ void display(FILE *f, ENVELOPE *env)
 
   return;
 }
+*********************** */
 
 /* *********************************************************************** */
 
-double u_random()
+double u_random(void)
 
 /* to return a standard uniform random number */
 {
