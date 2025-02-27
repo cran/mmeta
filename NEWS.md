@@ -1,24 +1,38 @@
-## version 3.0.0
+# mmeta 3.0.1
 
----
+## Bug fixes
 
+* Fixed Fortran code to comply with Fortran 2018 standards by replacing DO loop termination statements with END DO
+* Properly declared package dependencies in DESCRIPTION file
+* Fixed other CRAN check issues
+* Fixed a bug in overallRR function where the return value incorrectly used logRR_Var instead of logRR
 
-### Updates & New functions
+## New features
 
-- Functions for multipletables in previous version: multipletables, plot.multipletables, summary.multipletables, xtable.multipletables are deprecated.
-- Functions for singletable in previous version: singletable, plot.singletable, summary.singletable are deprecated.
-- For details of new functions regarding multipletables & singletable, please check the manual.
+* Added new plotting functions
+* Updated documentation
+* Fixed bugs in the previous version
+* Added more examples
 
+# mmeta 3.0.0
 
-## version 2.4.0
+## New features
 
----
+* Functions for multipletables in previous version: multipletables, plot.multipletables, summary.multipletables, xtable.multipletables are deprecated.
+* Functions for singletable in previous version: singletable, plot.singletable, summary.singletable are deprecated.
+* For details of new functions regarding multipletables & singletable, please check the manual.
+* Added new plotting functions
+* Updated documentation
+* Fixed bugs in the previous version
+* Added more examples
 
-### Updates
+# mmeta 2.4.0
 
-- Fixed bugs and issues requested by CRAN.
+## Updates
 
-### NEWS.md setup
+* Fixed bugs and issues requested by CRAN.
 
-- added NEWS.md creation with newsmd
+## Setup
+
+* Added NEWS.md creation with newsmd
 

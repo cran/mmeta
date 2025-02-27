@@ -13,6 +13,7 @@
 #include  <stdlib.h>
 #include <Rinternals.h>
 #include <R_ext/Rdynload.h>
+#include <R_ext/Memory.h>  /* for Calloc and Free functions */
 
 
 /* *********************************************************************** */
@@ -106,12 +107,22 @@ SEXP arms (SEXP bounds, SEXP myldens, SEXP yprev, SEXP size, SEXP rho) {
 /* rho         : R environment in which the logdensity is evaluated */
 
     double xl, xr, xinit[NINIT], convex=1.0;
-    int i, npoint=100, nsamp, neval, err;
+    int i, npoint=100, nsamp, neval=0, err=0;
     SEXP ysamp;         /* sampled values */
     ENVELOPE *env;      /* rejection envelope */
     POINT pwork;        /* a working point, not yet incorporated in envelope */
     int msamp=0;        /* the number of x-values currently sampled */
     METROPOLIS *metrop; /* to hold bits for metropolis step */
+
+    /* initialize variables to avoid warnings */
+    xl = xr = 0.0;
+    for (i=0; i<NINIT; i++) {
+        xinit[i] = 0.0;
+    }
+    /* initialize pwork to avoid warnings */
+    pwork.x = pwork.y = pwork.ey = pwork.cum = 0.0;
+    pwork.f = 0;
+    pwork.pl = pwork.pr = NULL;
 
     nsamp = INTEGER(size)[0];
     xl = REAL(bounds)[0];
@@ -123,7 +134,7 @@ SEXP arms (SEXP bounds, SEXP myldens, SEXP yprev, SEXP size, SEXP rho) {
 
     /* set up space required for envelope */
     /* env = (ENVELOPE *)malloc(sizeof(ENVELOPE)); */
-    env = (ENVELOPE *)Calloc(1, ENVELOPE);
+    env = (ENVELOPE *)R_Calloc(1, ENVELOPE);
     if(env == NULL){
         /* insufficient space */
         error("insufficient space");
@@ -131,7 +142,7 @@ SEXP arms (SEXP bounds, SEXP myldens, SEXP yprev, SEXP size, SEXP rho) {
 
     /* start setting up metropolis struct */
     /* metrop = (METROPOLIS *)malloc(sizeof(METROPOLIS)); */
-    metrop = (METROPOLIS *)Calloc(1, METROPOLIS);
+    metrop = (METROPOLIS *)R_Calloc(1, METROPOLIS);
     if(metrop == NULL){
         /* insufficient space */
          error("insufficient space");
@@ -174,9 +185,9 @@ SEXP arms (SEXP bounds, SEXP myldens, SEXP yprev, SEXP size, SEXP rho) {
     /* nsamp points now sampled */
 
     /* free space */
-    Free(env->p);
-    Free(env);
-    Free(metrop);
+    R_Free(env->p);
+    R_Free(env);
+    R_Free(metrop);
 
     UNPROTECT(1);
     return ysamp;
@@ -244,7 +255,7 @@ int initial (double *xinit, int ninit, double xl, double xr, int npoint,
   /* set up space for envelope POINTs */
   env->npoint = npoint;
   /* env->p = (POINT *)malloc(npoint*sizeof(POINT)); */
-  env->p = (POINT *)Calloc(npoint, POINT);
+  env->p = (POINT *)R_Calloc(npoint, POINT);
   if(env->p == NULL){
     /* insufficient space */
     return 1006;
@@ -325,8 +336,14 @@ void invert(double prob, ENVELOPE *env, POINT *p)
 /* *p      : a working POINT to hold the sampled value */
 
 {
-  double u,xl,xr,yl,yr,eyl,eyr,prop,z;
+  double u,xl,xr,yl,yr,eyl,eyr,prop;
   POINT *q;
+
+  /* initialize variables to avoid warnings */
+  xl = xr = 0.0;
+  yl = yr = 0.0;
+  eyl = eyr = 0.0;
+  prop = 0.0;
 
   /* find rightmost point in envelope */
   q = env->p;
@@ -391,13 +408,20 @@ int test(ENVELOPE *env, POINT *p, SEXP myldens, METROPOLIS *metrop, SEXP rho)
 
 /* *env          : envelope attributes */
 /* *p            : point to be tested */
-/* myldens       : R function to evaluate log-density */
+/* myldens       : R function to evaluate log density */
 /* *metrop       : data required for metropolis step */
 /* rho           : R environment in which the logdensity is evaluated */
 
 {
   double u,y,ysqueez,ynew,yold,znew,zold,w;
   POINT *ql,*qr;
+  
+  /* initialize variables to avoid warnings */
+  ysqueez = 0.0;
+  ynew = yold = 0.0;
+  znew = zold = 0.0;
+  w = 0.0;
+  ql = qr = NULL;
   
   /* for rejection test */
   u = u_random() * p->ey;
@@ -630,8 +654,11 @@ int meet (POINT *q, ENVELOPE *env, METROPOLIS *metrop)
 /* *metrop   : for metropolis step */
 
 {
-  double gl,gr,grl,dl,dr;
+  double gl = 0.0, gr = 0.0, grl = 0.0, dl = 0.0, dr = 0.0;
   int il,ir,irl;
+
+  /* initialize variables to avoid warnings */
+  il = ir = irl = 0;
 
   if(q->f){
     /* this is not an intersection point */

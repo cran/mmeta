@@ -1,6 +1,6 @@
-0a568315bfdfbe896c8e5cf46ac980bb *DESCRIPTION
+2fb649c8772b77836317f91710de0e31 *DESCRIPTION
 2587496456b6b3a981cde0ca13eb7ddb *NAMESPACE
-b64c0a2eabf521be1a0a5358d7df2074 *NEWS.md
+dddcdee1fa1682c2d0534a5b001cdb69 *NEWS.md
 e9f723891857e7dc73395a14c4597c62 *R/MultipleTables-method-exported.R
 cf3676726d3ac56d3312c0dd779fd552 *R/MultipleTables-method-internal.R
 55b46d5ce354132b7c3ec8376d0a8538 *R/SingleTable-methods-exported.R
@@ -10,7 +10,7 @@ cf3676726d3ac56d3312c0dd779fd552 *R/MultipleTables-method-internal.R
 81ac358b6e016b96ac5d4ba2e43b8544 *R/computation-exactMoment.R
 31b675cb54532f9b58979556dc86a086 *R/computation-loglikelihood.R
 2e2672d1f2321fd36110f8570148ccd0 *R/computation-mathFun.R
-fb8be88b21fc33a3da9356e7ba9c4c09 *R/computation-overallMeasure.R
+9bc53375624e8ea9e27d990389a44ae2 *R/computation-overallMeasure.R
 19a163e75cf008277d52ea90b85f2cbc *R/computation-samplePosterior.R
 8260329048a358429efd9b1fbaaab04c *R/computation-summary.R
 6a6d3750cc53ef5d9c671f8cbb70ca0e *R/config-globalConstant.R
@@ -22,7 +22,7 @@ fb8be88b21fc33a3da9356e7ba9c4c09 *R/computation-overallMeasure.R
 7efb5eccad22f6b517108ac6976dce72 *data/colorectal.rda
 648fb491475e0eda834f583bb25faf15 *data/diabetes.rda
 974d14e86af9ce362a3628a217242b88 *data/withdrawal.rda
-32b4e943d86a4a60d1533ec61dca213e *inst/CITATION
+a3f82cf37bce36c2f40e007a1641f97d *inst/CITATION
 a257a5f8316ebae381b772f695ebba69 *inst/WORDLIST
 14d7c092dbe67729d17eae78c8e0015b *man/MultipleTables.create.Rd
 4c3de7084a6d134033c905b40cbd2816 *man/MultipleTables.modelFit.Rd
@@ -35,5 +35,5 @@ d6333597fa84d1c3e1513811bf5901eb *man/SingleTable.create.Rd
 6685d5adc8bf4b4417a1b69ef65089c6 *man/colorectal.Rd
 804684adca2b33fe85d66484559edfd3 *man/diabetes.Rd
 0bbf964b4954c4b8a8d551d2166e76c3 *man/withdrawal.Rd
-3cb3870103ca6274e28bc22d3241086c *src/arms-R.c
-7b268128df741949da6ba269f849a121 *src/hygfx.f
+791f09a1701ab34af02f301829664457 *src/arms-R.c
+439eae7c590d1c835e8ef948478ea922 *src/hygfx.f

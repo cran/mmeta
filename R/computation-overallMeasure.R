@@ -62,7 +62,7 @@ overallRR <- function(a1, b1, a2, b2, hessian_log,alpha=alpha) {
   logRR_Var <- as.numeric(myD %*% covmat_logRR %*% t(myD))
   logRR_left<- logRR - qnorm(1-alpha/2)*sqrt(logRR_Var)                       
   logRR_right <- logRR + qnorm(1-alpha/2)*sqrt(logRR_Var)                      
-  return(list(overall=exp(logRR_Var), CI=exp(c(logRR_left,logRR_right))))
+  return(list(overall=exp(logRR), CI=exp(c(logRR_left,logRR_right))))
 }
 
 #############################################################################################
