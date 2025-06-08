@@ -1,3 +1,10 @@
+# mmeta 3.0.2
+
+## Updates
+
+* Package maintainer changed from Jiajie Chen to Bingyu Zhang
+* Updated maintainer contact information
+
 # mmeta 3.0.1
 
 ## Bug fixes
